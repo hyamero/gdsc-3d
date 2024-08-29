@@ -1,7 +1,9 @@
 function App() {
   return (
-    <div>
-      <p>Hello World</p>
+    <div className="font-inter">
+      <p className="text-white text-9xl font-semibold tracking-tighter text-center mt-20">
+        Hello GDSC
+      </p>
     </div>
   );
 }
