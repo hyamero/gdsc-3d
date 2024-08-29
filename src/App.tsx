@@ -1,11 +1,29 @@
-function App() {
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
+import { GBuilding } from "./components/GBuilding";
+
+export default function App() {
   return (
-    <div className="font-inter">
-      <p className="text-white text-9xl font-semibold tracking-tighter text-center mt-20">
-        Hello GDSC
-      </p>
+    <div className="h-full">
+      <Scene />
     </div>
   );
 }
 
-export default App;
+function Scene() {
+  return (
+    <Canvas>
+      <ambientLight intensity={Math.PI / 2} />
+      <spotLight
+        position={[10, 10, 10]}
+        angle={0.15}
+        penumbra={1}
+        decay={0}
+        intensity={Math.PI}
+      />
+      <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
+      <GBuilding />
+      <OrbitControls />
+    </Canvas>
+  );
+}
