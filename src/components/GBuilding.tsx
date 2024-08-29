@@ -62,16 +62,17 @@ type GLTFResult = GLTF & {
     mat8: THREE.MeshStandardMaterial;
     mat9: THREE.MeshStandardMaterial;
   };
-  animations: GLTFAction[];
+  //   animations: GLTFAction[];
 };
 
 export function GBuilding(props: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF("/gBuildingDraco.glb") as GLTFResult;
+
   return (
     <group {...props} dispose={null}>
       <group
-        // position={[0, 0, 12]}
-        rotation={[-Math.PI / 2, 0, 0]}
+        position={[0.5, -0.5, 0]}
+        rotation={[-Math.PI / 1.6, 0, 2]}
         scale={1.719}
       >
         <mesh geometry={nodes.Object_2.geometry} material={materials.mat6} />
@@ -80,19 +81,19 @@ export function GBuilding(props: JSX.IntrinsicElements["group"]) {
         <mesh geometry={nodes.Object_5.geometry} material={materials.mat12} />
         <mesh geometry={nodes.Object_6.geometry} material={materials.mat13} />
         <mesh geometry={nodes.Object_7.geometry} material={materials.mat14} />
-        <mesh geometry={nodes.Object_8.geometry} material={materials.mat15} />
-        <mesh geometry={nodes.Object_9.geometry} material={materials.mat16} />
-        <mesh geometry={nodes.Object_10.geometry} material={materials.mat17} />
+        {/* <mesh geometry={nodes.Object_8.geometry} material={materials.mat15} /> */}
+        {/* <mesh geometry={nodes.Object_9.geometry} material={materials.mat16} /> */}
+        {/* <mesh geometry={nodes.Object_10.geometry} material={materials.mat17} /> */}
         <mesh geometry={nodes.Object_11.geometry} material={materials.mat18} />
         <mesh geometry={nodes.Object_12.geometry} material={materials.mat19} />
         <mesh geometry={nodes.Object_13.geometry} material={materials.mat2} />
         {/**
          * Ground
          */}
-        <mesh geometry={nodes.Object_14.geometry} material={materials.mat20} />
+        {/* <mesh geometry={nodes.Object_14.geometry} material={materials.mat20} /> */}
         <mesh geometry={nodes.Object_15.geometry} material={materials.mat21} />
-        <mesh geometry={nodes.Object_16.geometry} material={materials.mat22} />
-        <mesh geometry={nodes.Object_17.geometry} material={materials.mat23} />
+        {/* <mesh geometry={nodes.Object_16.geometry} material={materials.mat22} /> */}
+        {/* <mesh geometry={nodes.Object_17.geometry} material={materials.mat23} /> */}
         <mesh geometry={nodes.Object_18.geometry} material={materials.mat24} />
         <mesh geometry={nodes.Object_19.geometry} material={materials.mat3} />
         <mesh geometry={nodes.Object_20.geometry} material={materials.mat4} />
