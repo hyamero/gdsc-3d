@@ -31,7 +31,47 @@ function Scene() {
         <GBuilding />
       </Float>
 
-      <Sparkles count={60} scale={[20, 20, 10]} size={1} speed={2} />
+      {/* <Sparkles count={60} scale={[20, 20, 10]} size={1} speed={2} /> */}
+      <Sparkles
+        scale={[5, 4, 10]}
+        color="red"
+        count={15}
+        noise={1}
+        opacity={0.2}
+        size={2}
+        speed={1}
+        position={[0, 2, 2]}
+      />
+      <Sparkles
+        scale={[5, 4, 10]}
+        color="cyan"
+        count={15}
+        noise={1}
+        opacity={0.2}
+        size={2}
+        speed={1}
+        position={[3, -1, 0]}
+      />
+      <Sparkles
+        scale={[5, 4, 10]}
+        color="yellow"
+        count={15}
+        noise={1}
+        opacity={0.2}
+        size={2.5}
+        speed={1}
+        position={[-2.5, 1, 0]}
+      />
+      <Sparkles
+        scale={[5, 4, 10]}
+        color="green"
+        count={15}
+        noise={1}
+        opacity={0.2}
+        size={4}
+        speed={1}
+        position={[-0, -2.5, 2]}
+      />
 
       <EffectComposer multisampling={0}>
         <Bloom
