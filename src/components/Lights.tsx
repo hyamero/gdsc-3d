@@ -3,51 +3,46 @@ import { useRef } from "react";
 import * as THREE from "three";
 
 export const Lights = () => {
-  const groupL = useRef(null);
-  const groupR = useRef(null);
-  const front = useRef(null);
+  const leftLightGroup = useRef<THREE.Group>(null);
+  const rightLightGroup = useRef<THREE.Group>(null);
+  const frontSpotlight = useRef<THREE.SpotLight>(null);
 
   useFrame(({ pointer }) => {
-    if (!groupL.current || !groupR.current || !front.current) return;
+    const leftGroup = leftLightGroup.current;
+    const rightGroup = rightLightGroup.current;
+    const spotlight = frontSpotlight.current;
 
-    (groupR.current as THREE.Mesh).rotation.y = THREE.MathUtils.lerp(
-      (groupR.current as THREE.Mesh).rotation.y,
-      -pointer.x * (Math.PI / 2),
-      0.1
-    );
-    (groupL.current as THREE.Mesh).rotation.y = THREE.MathUtils.lerp(
-      (groupL.current as THREE.Mesh).rotation.y,
-      pointer.x * (Math.PI / 2),
-      0.1
-    );
-    (front.current as THREE.Mesh).position.x = THREE.MathUtils.lerp(
-      (front.current as THREE.Mesh).position.x,
-      -0.5 + pointer.x * 7,
-      0.07
-    );
-    (front.current as THREE.Mesh).position.y = THREE.MathUtils.lerp(
-      (front.current as THREE.Mesh).position.y,
-      4 + pointer.y * 4,
-      0.07
-    );
+    if (leftGroup && rightGroup && spotlight) {
+      const lerpX = THREE.MathUtils.lerp;
+
+      const rotationY = pointer.x * (Math.PI / 2);
+      leftGroup.rotation.y = lerpX(leftGroup.rotation.y, -rotationY, 0.1);
+      rightGroup.rotation.y = lerpX(rightGroup.rotation.y, rotationY, 0.1);
+
+      spotlight.position.set(
+        lerpX(spotlight.position.x, -0.5 + pointer.x * 7, 0.07),
+        lerpX(spotlight.position.y, 4 + pointer.y * 4, 0.07),
+        spotlight.position.z
+      );
+    }
   });
 
   return (
     <>
-      <group ref={groupL}>
+      <group ref={leftLightGroup}>
         <pointLight position={[0, 4, 5]} distance={2} intensity={120} />
       </group>
-      <group ref={groupR}>
+      <group ref={rightLightGroup}>
         <pointLight position={[0, 4, 8]} distance={2} intensity={120} />
       </group>
       <spotLight
         castShadow
-        ref={front}
+        ref={frontSpotlight}
         penumbra={1}
         angle={Math.PI / 4}
-        position={[0, 2, 2]}
+        position={[0, 0, 4]}
         distance={10}
-        intensity={100}
+        intensity={120}
         shadow-mapSize={[2048, 2048]}
       />
     </>
