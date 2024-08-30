@@ -42,7 +42,7 @@ export const Lights = () => {
         angle={Math.PI / 4}
         position={[0, 0, 4]}
         distance={10}
-        intensity={120}
+        intensity={150}
         shadow-mapSize={[2048, 2048]}
       />
     </>
