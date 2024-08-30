@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import { GBuilding } from "./components/GBuilding";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, Sparkles } from "@react-three/drei";
+import { Cloud, Float, Sparkles } from "@react-three/drei";
 import {
   Bloom,
   Noise,
@@ -22,16 +22,16 @@ function Scene() {
   return (
     <Canvas camera={{ position: [0, 0, 14], fov: 50 }}>
       <color attach="background" args={["#050505"]} />
-      <Rig />
-      <Lights />
-      <fog attach="fog" args={[0x050505, 0, 20]} />
+      <fog attach="fog" args={[0x050505, 0, 15]} />
       <pointLight position={[0, 10, -7]} intensity={1} />
+      <Lights />
 
       <Float speed={4} rotationIntensity={1} floatIntensity={2}>
         <GBuilding />
       </Float>
 
-      {/* <Sparkles count={60} scale={[20, 20, 10]} size={1} speed={2} /> */}
+      <Cloud position={[0, -3.5, 1.5]} rotation={[0, -Math.PI / 6, 0]} />
+
       <Sparkles
         scale={[5, 4, 10]}
         color="red"
@@ -75,14 +75,16 @@ function Scene() {
 
       <EffectComposer multisampling={0}>
         <Bloom
-          luminanceThreshold={0}
+          luminanceThreshold={-3}
           luminanceSmoothing={0.9}
-          height={300}
+          height={400}
           opacity={1}
         />
         <Noise opacity={0.025} />
         <Vignette eskil={false} offset={0.1} darkness={1.1} />
       </EffectComposer>
+
+      <Rig />
     </Canvas>
   );
 }
