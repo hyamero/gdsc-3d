@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Cloud, Float, Sparkles } from "@react-three/drei";
+import { Cloud, Float, Html, Loader, Sparkles } from "@react-three/drei";
 import {
   Bloom,
   Noise,
@@ -9,6 +9,7 @@ import {
 } from "@react-three/postprocessing";
 import { Lights } from "./Lights";
 import { GBuilding } from "./GBuilding";
+import { Suspense } from "react";
 
 export default function Scene() {
   return (
@@ -19,7 +20,15 @@ export default function Scene() {
       <Lights />
 
       <Float speed={4} rotationIntensity={1} floatIntensity={2}>
-        <GBuilding />
+        <Suspense
+          fallback={
+            <Html>
+              <Loader />
+            </Html>
+          }
+        >
+          <GBuilding />
+        </Suspense>
       </Float>
 
       <Cloud position={[0, -3.5, 1.5]} rotation={[0, -Math.PI / 6, 0]} />
