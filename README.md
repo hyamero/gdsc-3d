@@ -2,7 +2,8 @@
 
 Countdown Website for Google DSC — USLS with Interactive 3D Environment using R3F.
 
-![image](https://github.com/user-attachments/assets/d7c26d8a-5d39-4914-8bbb-6155a24d3318)
+![image](https://github.com/user-attachments/assets/3170aefd-9d94-4710-b9fe-4f033c295ed1)
+
 
 
 ## R3F Ecosystem
