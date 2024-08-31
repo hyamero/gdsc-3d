@@ -14,8 +14,8 @@ import { Suspense } from "react";
 export default function Scene() {
   return (
     <Canvas camera={{ position: [0, 0, 14], fov: 50 }}>
-      <color attach="background" args={["#050505"]} />
-      <fog attach="fog" args={[0x050505, 0, 15]} />
+      <color attach="background" args={["#210300"]} />
+      <fog attach="fog" args={[0x210300, 0, 15]} />
       <pointLight position={[0, 10, -7]} intensity={1} />
       <Lights />
 
@@ -31,47 +31,21 @@ export default function Scene() {
         </Suspense>
       </Float>
 
-      <Cloud position={[0, -3.5, 1.5]} rotation={[0, -Math.PI / 6, 0]} />
+      <Cloud
+        position={[0, -3.5, 1.5]}
+        rotation={[0, -Math.PI / 6, 0]}
+        color="#ffc3bf"
+      />
 
       <Sparkles
-        scale={[5, 4, 10]}
-        color="red"
-        count={15}
-        noise={1}
-        opacity={0.2}
-        size={2}
-        speed={1}
-        position={[0, 2, 2]}
-      />
-      <Sparkles
-        scale={[5, 4, 10]}
-        color="cyan"
-        count={15}
-        noise={1}
-        opacity={0.2}
-        size={2}
-        speed={1}
-        position={[3, -1, 0]}
-      />
-      <Sparkles
-        scale={[5, 4, 10]}
-        color="yellow"
-        count={15}
-        noise={1}
-        opacity={0.2}
-        size={2.5}
-        speed={1}
-        position={[-2.5, 1, 0]}
-      />
-      <Sparkles
-        scale={[5, 4, 10]}
-        color="green"
-        count={15}
-        noise={1}
-        opacity={0.2}
+        scale={[15, 15, 15]}
+        color="#FF5400"
+        count={60}
+        noise={2}
+        opacity={0.4}
         size={4}
-        speed={1}
-        position={[-0, -2.5, 2]}
+        speed={0.6}
+        position={[0, 0, -2]}
       />
 
       <EffectComposer multisampling={0}>

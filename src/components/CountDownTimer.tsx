@@ -36,7 +36,7 @@ export default function DarkModeGradientCountdownTimer() {
   }, []);
 
   return (
-    <div className="font-inter p-8 rounded-2xl bg-black [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] bg-opacity-60 backdrop-blur-xl scale-75 md:scale-100">
+    <div className="font-inter p-8 rounded-2xl bg-black border border-orange-950/50 [box-shadow:0_-20px_80px_-20px_#FF54001f_inset] bg-opacity-60 backdrop-blur-xl scale-75 md:scale-100">
       <div className="flex justify-around text-center">
         <TimeUnit value={days} label="Days" />
         <TimeUnit value={hours} label="Hours" />
@@ -50,7 +50,7 @@ export default function DarkModeGradientCountdownTimer() {
 function TimeUnit({ value, label }: { value: number; label: string }) {
   return (
     <div className="flex flex-col items-center">
-      <div className="text-4xl font-bold bg-gradient-to-br from-neutral-400 to-neutral-950 text-transparent bg-clip-text w-32 flex items-center justify-center mb-4 rounded-2xl shadow-lg overflow-hidden">
+      <div className="text-4xl font-bold bg-gradient-to-br from-orange-600 to-neutral-950 text-transparent bg-clip-text w-32 flex items-center justify-center mb-4 rounded-2xl shadow-lg overflow-hidden">
         <AnimatePresence mode="wait">
           <motion.span
             key={value}

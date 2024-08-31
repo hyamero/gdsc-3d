@@ -6,11 +6,11 @@ export default function App() {
     <div className="h-full font-inter">
       <div className="absolute left-0 top-0 h-full w-full z-20 flex justify-between flex-col items-center pt-8 md:pt-10 pb-5 pointer-events-none">
         <div className="text-center">
-          <div className="text-4xl font-bold bg-gradient-to-b from-neutral-500 to-neutral-800 text-transparent bg-clip-text uppercase tracking-tighter rounded-2xl overflow-hidden">
+          <div className="text-4xl font-extrabold bg-gradient-to-b from-orange-600 to-orange-950 opacity-80 text-transparent bg-clip-text uppercase tracking-tighter rounded-2xl overflow-hidden">
             <h2>District 3</h2>
           </div>
 
-          <h1 className="font-semibold text-neutral-600 opacity-75">
+          <h1 className="font-semibold text-neutral-600 opacity-75 text-sm">
             Google Developer Student Clubs USLS
           </h1>
         </div>

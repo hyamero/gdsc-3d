@@ -44,6 +44,7 @@ export const Lights = () => {
         distance={10}
         intensity={150}
         shadow-mapSize={[2048, 2048]}
+        color="#ffc5a3"
       />
     </>
   );
