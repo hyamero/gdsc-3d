@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Cloud, Float, Html, Loader, Sparkles } from "@react-three/drei";
 import {
@@ -9,7 +10,6 @@ import {
 } from "@react-three/postprocessing";
 import { Lights } from "./Lights";
 import { GBuilding } from "./GBuilding";
-import { Suspense } from "react";
 
 export default function Scene() {
   return (

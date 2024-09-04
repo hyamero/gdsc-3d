@@ -6,12 +6,19 @@ export default function App() {
     <div className="h-full font-inter">
       <div className="absolute left-0 top-0 h-full w-full z-20 flex justify-between flex-col items-center pt-8 md:pt-10 pb-5 pointer-events-none">
         <div className="text-center">
-          <div className="text-4xl font-extrabold bg-gradient-to-b from-orange-600 to-orange-950 opacity-80 text-transparent bg-clip-text uppercase tracking-tighter rounded-2xl overflow-hidden">
-            <h2>District 3</h2>
+          <div className="text-3xl font-extrabold bg-gradient-to-b from-orange-600 to-orange-950 opacity-80 text-transparent bg-clip-text uppercase tracking-tighter rounded-2xl overflow-hidden">
+            <h2>The Capitol Highlights</h2>
           </div>
 
           <h1 className="font-semibold text-neutral-600 opacity-75 text-sm">
-            Google Developer Student Clubs USLS
+            <a
+              href="https://www.facebook.com/dsc.usls"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="pointer-events-auto"
+            >
+              Google Developer Student Clubs — USLS
+            </a>
           </h1>
         </div>
         <div>

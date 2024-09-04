@@ -8,7 +8,8 @@ export default function DarkModeGradientCountdownTimer() {
   const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {
-    const target = new Date("2024-09-13T23:59:59");
+    // const target = new Date("2024-09-12T23:59:59");
+    const target = new Date("2024-09-12T23:59:59");
 
     const interval = setInterval(() => {
       const now = new Date();
@@ -36,14 +37,16 @@ export default function DarkModeGradientCountdownTimer() {
   }, []);
 
   return (
-    <div className="font-inter p-8 rounded-2xl bg-black border border-orange-950/50 [box-shadow:0_-20px_80px_-20px_#FF54001f_inset] bg-opacity-60 backdrop-blur-xl scale-75 md:scale-100">
-      <div className="flex justify-around text-center">
-        <TimeUnit value={days} label="Days" />
-        <TimeUnit value={hours} label="Hours" />
-        <TimeUnit value={minutes} label="Minutes" />
-        <TimeUnit value={seconds} label="Seconds" />
+    days && (
+      <div className="font-inter p-8 rounded-2xl bg-black border border-orange-950/50 [box-shadow:0_-20px_80px_-20px_#FF54001f_inset] bg-opacity-60 backdrop-blur-xl scale-75 md:scale-100">
+        <div className="flex justify-around text-center">
+          <TimeUnit value={days} label="Days" />
+          <TimeUnit value={hours} label="Hours" />
+          <TimeUnit value={minutes} label="Minutes" />
+          <TimeUnit value={seconds} label="Seconds" />
+        </div>
       </div>
-    </div>
+    )
   );
 }
 
